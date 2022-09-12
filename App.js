@@ -1,20 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
+import Hero from "./components/Hero";
+import Navbar from "./components/Navbar";
+import PopularFood from "./components/PopularFood";
 
 export default function App() {
+  // <View /> component is like div in html5 and the default style is on flex
+  // <SafeAreaView /> component is like div but its make the view below notch phone
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <ScrollView>
+        <Navbar />
+        <Hero />
+        <PopularFood />
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "white",
+    // padding : 10
   },
 });
